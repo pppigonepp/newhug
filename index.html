@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>抱抱老子</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .hug-button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hug-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hug-button:active {
+            transform: scale(0.95) rotate(10deg);
+        }
+
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInOut 1.5s ease;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md text-center space-y-6">
+        <h1 class="text-3xl font-bold text-pink-600">点我，抱抱老子~</h1>
+        <button id="hugButton" class="hug-button">
+            <i class="fa-solid fa-heart"></i> 抱抱我
+        </button>
+    </div>
+    <div id="customAlert1" class="custom-alert">
+        <p class="text-pink-600 text-xl">老子要抱抱！🥺</p>
+        <button id="hugMe1" class="hug-button">抱抱你</button>
+    </div>
+    <div id="customAlert2" class="custom-alert">
+        <p class="text-pink-600 text-xl">还不抱抱老子？🥰</p>
+        <button id="hugMe2" class="hug-button">抱抱你</button>
+    </div>
+    <div id="customAlert3" class="custom-alert">
+        <p class="text-pink-600 text-xl">快点抱抱老子啦~🤭</p>
+        <button id="hugMe3" class="hug-button">抱抱你</button>
+    </div>
+    <script>
+        const hugButton = document.getElementById('hugButton');
+        const customAlert1 = document.getElementById('customAlert1');
+        const customAlert2 = document.getElementById('customAlert2');
+        const customAlert3 = document.getElementById('customAlert3');
+        const hugMe1 = document.getElementById('hugMe1');
+        const hugMe2 = document.getElementById('hugMe2');
+        const hugMe3 = document.getElementById('hugMe3');
+
+        hugButton.addEventListener('click', function () {
+            customAlert1.style.display = 'block';
+        });
+
+        hugMe1.addEventListener('click', function () {
+            customAlert1.style.display = 'none';
+            customAlert2.style.display = 'block';
+        });
+
+        hugMe2.addEventListener('click', function () {
+            customAlert2.style.display = 'none';
+            customAlert3.style.display = 'block';
+        });
+
+        hugMe3.addEventListener('click', function () {
+            customAlert3.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
+    
